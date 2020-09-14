@@ -101,7 +101,7 @@ def simple_upload(request):
     
 def Container_create(c_name):
     try:
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=globalmicrotel;AccountKey=wsLwVILrwM+6RKwnkqQLORiUeLozc0odFqeNZyhRexkNUWxIddDnbVuR3jN7wz2nW+/1ry6mDx+hL3WN5t35xw==;EndpointSuffix=core.windows.net"
+        connect_str = "Update Connection string"
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         container_name = c_name
         #print("Container Creation started ....\n")
@@ -116,7 +116,7 @@ def Container_create(c_name):
     
 def Container_delete(c_name):
     try:
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=globalmicrotel;AccountKey=wsLwVILrwM+6RKwnkqQLORiUeLozc0odFqeNZyhRexkNUWxIddDnbVuR3jN7wz2nW+/1ry6mDx+hL3WN5t35xw==;EndpointSuffix=core.windows.net"
+        connect_str = "Update Connection string"
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         container_client = blob_service_client.get_container_client(c_name)
         #print(container_client)
@@ -128,7 +128,7 @@ def Container_delete(c_name):
         #print(ex)
 def Container_list(c_name):
     try:
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=globalmicrotel;AccountKey=wsLwVILrwM+6RKwnkqQLORiUeLozc0odFqeNZyhRexkNUWxIddDnbVuR3jN7wz2nW+/1ry6mDx+hL3WN5t35xw==;EndpointSuffix=core.windows.net"
+        connect_str = "Update Connection string"
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         container_client = blob_service_client.get_container_client(c_name)
         #container_client = blob_service_client.get_container_client("shailesh")
@@ -146,7 +146,7 @@ def Container_list(c_name):
    
 def upload_blob(f_name,c_name):
     try:
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=globalmicrotel;AccountKey=wsLwVILrwM+6RKwnkqQLORiUeLozc0odFqeNZyhRexkNUWxIddDnbVuR3jN7wz2nW+/1ry6mDx+hL3WN5t35xw==;EndpointSuffix=core.windows.net"
+        connect_str = "Update Connection string"
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         local_path = "media" 
         local_file_name = f_name
