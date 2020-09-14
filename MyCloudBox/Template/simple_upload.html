@@ -1,0 +1,50 @@
+
+{% load static %}
+{% static "images" as BaseUrl %}
+
+<html>
+<head>
+<title> My Cloud Box Portal : Access your files here</title>
+<div> <header> <center><h1 style="color:GREEN;" "background-color: White;">Welcome To My Cloud Box Portal</h1></center></header></div>
+
+</head>
+<body style="background-color:powderblue;">       
+<h2>Hi {{ user_name }} , Your available files are here</h2>
+
+  <form method= "POST" action="simple_upload" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <input type="hidden" id="custId" name="cname" value = {{user_name}} >
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %}
+
+  <!--{% if list_of_files %}-->
+  List of Files as below :<br>
+  {% for file_l in list_of_files %} 
+       <a href="{{file_l}}">{{ file_l }}</a><br>
+  {% endfor %} 
+  <!-- {% endif %}-->
+  <br><br><br>
+  <form method= "POST" action="login" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+
+		<form name = "form7" method="post" action="change_password" id = "form7">
+			{% csrf_token %}
+			<input type="hidden" id="custId" name="uname" value = {{user_name}} >
+			<button type = 'submit'> Change Password </button>
+		</form>
+		
+		<form name = "form8" method="post" action="delete_account" id = "form8">
+			{% csrf_token %}
+			<input type="hidden" id="custId" name="uname" value = {{user_name}} >
+			<button type = 'submit'> Delete Account </button>
+		</form>
+	
+</body>
+</html>

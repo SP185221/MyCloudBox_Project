@@ -1,0 +1,70 @@
+<html>
+<head>
+<title> NCR India CE Registration</title>
+<div> <header>Pls fill the required details and click on submit on completion</header></div>
+
+</head>
+<body style="background-color:powderblue;">
+<h2> Registration form</h2>
+<div id = "registration-form" >
+	<form name = "form3" method="post" action="registration" id = "form3" >
+		{% csrf_token %}
+		<label for = 'first-name'> First Name: </label>
+		<input type = 'text' name = "first-name" placeholder = "Shailesh" maxlength = "20" required>
+		<label for = 'last-name'> Last Name: </label>
+		<input type = 'text' name = "last-name" placeholder = "Singh" maxlength = "20" required>
+		<br>
+		<label for = 'mobile'> Mobile No: </label>
+		<input type = 'text' name = "mobile" placeholder = "9990012173"  maxlength = "10" maxlength = "10" required>
+		<br>
+		<label for = 'email'> Email Id: </label>
+		<input type = 'email' name = "email" placeholder = "sp185221@gmail.com" required>
+		<br>
+		<label for = 'dob'> Select DOB :  </label>
+		<input type = 'date' name = "dob" default = "01-01-2000" max="2020-07-07" min="1988-01-01"  required>
+		<label for = 'gender'>Gender:</label>
+		<label for = 'male'> Male  </label>
+		<input type = 'radio' name = "gender" value = "Male" required>
+		<label for = 'female'> Female </label>
+		<input type = 'radio' name = "gender" value = "Female" required>
+		<br>
+		<label for = 'company'> Company Name:  </label>
+		<input type = 'text' name = "company" placeholder = "NCR Corporation" maxlength = "20" required>
+		<br>
+		<label for = 'address'> Address: </label>
+		<input type = 'text' name = "address" placeholder = "303, A9, Habitech " maxlength = "20" required>
+	
+		
+		<br>
+		<label for = 'username'> User Name: </label>
+		<input type = 'text' name = "username" placeholder = "shaileshsingh" maxlength = "20" required>{{availability}}
+	
+		<br>
+	
+		<label for = 'password'> Password: </label>
+		<input type = 'password' name = "password1" maxlength = "20" required>
+		<label for = 'password'> Confirm: </label>
+		<input type = 'password' name = "password2" maxlength = "20" required>
+		{{password_validation}}
+		<br>
+		<label for = 'agree'> I confirmed all provided details are correct  </label>
+		<input type = 'checkbox' name = "agree" required>
+		<button type = 'submit'>Submit</button>
+
+	</form>
+</div>
+
+<div id = "login-form" >
+	
+	<form name = "form5" method="post" action="login" id = "form5">
+		{% csrf_token %}
+		<br>
+		<br>
+		<p>If you have alreday registered, Click Here to login <button type = 'submit'> Login </button></p>
+	</form>
+</div>
+<a herf='https://www.globalmicrotel.com/'>www.globalmicrotel.com</a>
+<div><footer>For more Information visit <a herf="http://www.ncr.com">www.globalmicrotel.com</a></footer></div>
+</body>
+
+</html>

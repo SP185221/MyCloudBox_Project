@@ -1,0 +1,69 @@
+<html>
+<head>
+<title> NCR India CE Details</title>
+{% for emp in emps %}
+<div> <header><Center>Hello  {{emp.firstname}}, Pls find your details as below </Center></header></div>
+<center><h2 style="color:GREEN;">{{welcome}}</h2></center>
+
+</head>
+<body style="background-color:powderblue;"> 
+<h2><Center> CE Details </Center></h2>
+
+
+<div id = "details" ><Center>
+
+	<style type ="text/css">
+	table{border: 1px solid rgb(9, 39, 172);}
+	thead{border: 1px solid rgb(72, 15, 206);}
+	td{border: 1px solid rgb(28, 14, 158);}
+	
+	</style>
+
+	
+	<table>
+		<thead><th>Parameters</th><th>Values</th></thead>
+		<tr><td>Name </td><td>{{emp.firstname}} {{emp.lastname}}</td></tr>
+		<tr><td>Mobile </td><td>{{emp.mobile}}</td></tr>
+		<tr><td>Date of Birth </td><td>{{emp.dob}}</td></tr>
+		<tr><td>Gender </td><td>{{emp.gender}}</td></tr>
+		<tr><td>Email Id </td><td>{{emp.email}}</td></tr>
+		<tr><td>Company </td><td>{{emp.company}}</td></tr>
+		<tr><td>Address </td><td>{{emp.address}}</td></tr>
+		<tr><td>User Name </td><td>{{emp.username}}</td></tr>
+		<tr><td>Password</td><td>{{emp.password}}</td></tr>
+	</table>
+
+	</Center><br><br>
+</div><Center>
+
+	<div id = "login-form" >
+	
+		<form name = "form4" method="post" action="login" id = "form4">
+			{% csrf_token %}
+			<button type = 'submit'> Logout </button>
+		</form>
+	</div>
+
+	<div id = "login-form" >
+	
+		<form name = "form7" method="post" action="change_password" id = "form7">
+			{% csrf_token %}
+			<input type="hidden" id="custId" name="uname" value = {{emp.username}} >
+			<button type = 'submit'> Change Password </button>
+		</form>
+	</div>
+
+	<div id = "login-form" >
+	
+		<form name = "form8" method="post" action="delete_account" id = "form8">
+			{% csrf_token %}
+			<input type="hidden" id="custId" name="uname" value = {{emp.username}} >
+			<button type = 'submit'> Delete Account </button>
+		</form>
+	</div>
+	{% endfor %}
+<a herf = 'https://www.globalmicrotel.com/'>www.globalmicrotel.com</a>
+<div><footer>For more Information visit <a herf= "http://www.globalmicrotel.com" >www.globalmicrotel.com</a></footer></div>
+</Center></body>
+
+</html>

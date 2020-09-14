@@ -1,0 +1,36 @@
+{% load static %}
+{% static "images" as BaseUrl %}
+
+<html>
+<head>
+<title> My Cloud Box Portal : Save your files in cloud and access from anywhere</title>
+<div> <header> <center><h1 style="color:GREEN;" "background-color: White;">Welcome To My Cloud Box Portal</h1></center></header></div>
+</head>
+<body style="background-color:powderblue;"> <center>
+<h2> Login Credientials</h2>
+<div id = "login-form" >
+	
+	<form name = "form1" method="post" action="display" id = "form1">
+		{% csrf_token %}
+		<label for = 'username'> User Name: </label>
+		<input type = 'text' name = "user" placeholder = "shaileshsingh" maxlength = "20" required>
+		<label for = 'pass'> Password: </label>
+		<input type = 'password' name = "pass" maxlength = "20" required>
+		<button type = 'submit'>Submit</button>
+	</form>
+</div>
+<h1 style="color:RED;"> {{invalid}}</h1></h1><br>
+<div id = "registration-form" >
+	
+	<form name = "form2" method="post" action="create" id = "form2">
+		{% csrf_token %}
+		<button type = 'submit'> Create New Account </button>
+	</form>
+</div>
+
+<a herf='https://www.globalmicrotel.com/'>www.globalmicrotel.com</a>
+<div><footer>For more Information visit <a herf="http://www.ncr.com">www.globalmicrotel.com</a></footer></div>
+<img border="0" src="{% static 'mycloud.jpg' %}" width="300" height="300" align="center">
+	</center></body>
+
+</html>
